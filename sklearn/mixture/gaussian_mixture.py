@@ -4,9 +4,11 @@
 # Modified by Thierry Guillemot <thierry.guillemot.work@gmail.com>
 # License: BSD 3 clause
 
-import numpy as np
+import autograd.numpy as np
+#import numpy as np
 
-from scipy import linalg
+#from scipy import linalg
+from autograd.scipy import linalg
 
 from .base import BaseMixture, _check_shape
 from ..externals.six.moves import zip
@@ -17,6 +19,10 @@ from ..utils.extmath import row_norms
 
 ###############################################################################
 # Gaussian mixture shape checkers used by the GaussianMixture class
+
+def hello():
+    return 'chicken safety'
+
 
 def _check_weights(weights, n_components):
     """Check the user provided 'weights'.

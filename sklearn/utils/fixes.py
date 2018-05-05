@@ -18,6 +18,9 @@ import numpy as np
 import scipy.sparse as sp
 import scipy
 
+import autograd.numpy as anp
+import autograd.scipy as asp
+
 try:
     from inspect import signature
 except ImportError:
@@ -145,9 +148,11 @@ else:
 
 
 try:  # SciPy >= 0.19
-    from scipy.special import comb, logsumexp
+    from scipy.special import comb
+    from autograd.scipy.misc import logsumexp
 except ImportError:
-    from scipy.misc import comb, logsumexp  # noqa
+    from scipy.special import comb # noqa
+    from autograd.scipy.misc import logsumexp
 
 
 if sp_version >= (0, 19):

@@ -10,7 +10,8 @@ import warnings
 from abc import ABCMeta, abstractmethod
 from time import time
 
-import numpy as np
+import autograd.numpy as np
+#import numpy as np
 
 from .. import cluster
 from ..base import BaseEstimator
